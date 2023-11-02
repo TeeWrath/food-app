@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FoodService } from '../services/food/food.service';
+import { Food } from 'src/shared/models/Food';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,7 @@ import { FoodService } from '../services/food/food.service';
 })
 export class HomeComponent {
 
-  foods !: String[];
+  foods !: Food[];
   constructor(private fs : FoodService){}
   ngOnInit(): void {
     this.foods = this.fs.getAll();
