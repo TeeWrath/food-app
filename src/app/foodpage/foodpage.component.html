@@ -18,5 +18,5 @@
       {{ food[0].price | currency : "USD" : true : "1.2-2" }}
     </div>
   </div>
-  <button>Add to Cart</button>
+  <button (click)="addToCart()">Add to Cart</button>
 </div>

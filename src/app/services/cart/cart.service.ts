@@ -23,6 +23,7 @@ export class CartService {
 
   addToCart( food : Food) : void{
     let cartItem = this.cart.items.find(item => item.food.id = food.id)
+    console.log(this.cart.items[0].food);
     if(cartItem){
       this.changeQuantity(food.id, cartItem.quantity + 1);
       return
