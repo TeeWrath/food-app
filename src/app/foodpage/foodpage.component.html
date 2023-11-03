@@ -1,0 +1,22 @@
+<div class="container">
+  <img src="{{ food[0].imageUrl }}" alt="" />
+  <div class="texts">
+    <div class="name">{{ food[0].name }}</div>
+    <span class="favorite {{ food[0].favorite ? '' : 'not' }}"> &#9829; </span>
+    <div class="product-item-footer">
+      <div class="origins">
+        <span *ngFor="let f of food[0].origins">
+          {{ f }}
+        </span>
+      </div>
+      <div class="cook-time">
+        <span> &#x23F2; </span>
+        {{ food[0].cookTime }} min
+      </div>
+    </div>
+    <div class="price">
+      {{ food[0].price | currency : "USD" : true : "1.2-2" }}
+    </div>
+  </div>
+  <button>Add to Cart</button>
+</div>

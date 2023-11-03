@@ -26,6 +26,10 @@ export class FoodService {
     );
   }
 
+  getFoodbyId(id : number) : Food[]{
+    return this.getAll().filter((food) => food.id == id)
+  }
+
   getAll(): Food[] {
     return [
       {
