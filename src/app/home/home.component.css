@@ -12,8 +12,8 @@ ul li img{
 }
 
 ul li a{
-    height: 20rem;
-    width: 20rem;
+    height: 22rem;
+    width: 22rem;
     display: flex;
     flex-direction: column;
     border: 1px solid whitesmoke;
@@ -27,4 +27,46 @@ ul li a{
 li a:hover{
     opacity: 0.9;
     cursor: pointer;
+}
+
+.container{
+    padding: 1rem;
+    position: relative;
+}
+
+.favorite{
+    position: absolute;
+    top: .5rem;
+    right: 1rem;
+    font-size: 1.5rem;
+}
+
+.favorite.not:hover{
+    color: #e72929;
+}
+
+.favorite.not{
+    color: grey;
+    transition: 1s;
+}
+
+.product-item-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: grey;
+}
+
+.origins:hover{
+    color: #e72929;
+}
+
+.container div{
+    margin-bottom: 0.2rem;
+}
+
+.price{
+    font-size: 1rem;
+    color: grey;
 }
