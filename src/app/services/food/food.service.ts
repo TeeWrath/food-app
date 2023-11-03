@@ -1,10 +1,30 @@
 import { Injectable } from '@angular/core';
 import { Food } from 'src/shared/models/Food';
+import { Tag } from 'src/shared/models/Tag';
 @Injectable({
   providedIn: 'root',
 })
 export class FoodService {
   constructor() {}
+
+  getAllTags(): Tag[] {
+    return [
+      { name: 'All', count: 14 },
+      { name: 'FastFood', count: 4 },
+      { name: 'Pizza', count: 2 },
+      { name: 'Lunch', count: 3 },
+      { name: 'SlowFood', count: 2 },
+      { name: 'Hamburger', count: 1 },
+      { name: 'Fry', count: 1 },
+      { name: 'Soup', count: 1 },
+    ];
+  }
+
+  getAllbySearchTerm(searchTerm: string): Food[] {
+    return this.getAll().filter((food) =>
+      food.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  }
 
   getAll(): Food[] {
     return [
@@ -69,5 +89,12 @@ export class FoodService {
         tags: ['FastFood', 'Pizza', 'Lunch'],
       },
     ];
+  }
+
+  getAllbyTag(params: string): Food[] {
+    // using ternary operator to shorten the code
+    return params == 'All'
+      ? this.getAll()
+      : this.getAll().filter((food) => food.tags?.includes(params));
   }
 }
